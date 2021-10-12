@@ -15,6 +15,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.text.DecimalFormat;
+
 public class Main extends Application {
     public static void main(String[] args) {
         Application.launch(args);
@@ -42,7 +44,14 @@ public class Main extends Application {
         EventHandler<ActionEvent> event2 = new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                try{
+                    double temp = Double.parseDouble(tf2.getText());
+                    double convertedTemp = (temp - 32) * 5/9;
 
+                    tf1.setText(String.format("%.1f", convertedTemp));
+                }catch (NumberFormatException e){
+                    tf1.setText("Bitte geben Sie eine Nummer ein");
+                }
             }
         };
 
