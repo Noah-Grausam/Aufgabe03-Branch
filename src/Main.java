@@ -52,6 +52,7 @@ public class Main extends Application {
         b2.setOnAction(event2);
 
         vBox.getChildren().addAll(l1, tf1, l2, tf2, b1, b2);
+        vBox.setStyle("-fx-font-size: 16; -fx-font-weight: bold;");
 
         root.getChildren().add(vBox);
         stage.setScene(scene);
