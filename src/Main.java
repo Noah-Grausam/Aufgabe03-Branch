@@ -36,7 +36,14 @@ public class Main extends Application {
         EventHandler<ActionEvent> event1 = new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                try{
+                    double temp = Double.parseDouble(tf1.getText());
+                    double convertedTemp = temp * 1.8 +32;
 
+                    tf2.setText(String.format("%.1f", convertedTemp));
+                }catch (NumberFormatException e){
+                    tf2.setText("Bitte geben Sie eine Nummer ein");
+                }
             }
         };
         EventHandler<ActionEvent> event2 = new EventHandler<ActionEvent>() {
